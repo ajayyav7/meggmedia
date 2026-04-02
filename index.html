@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Megg Media — Short-Form Video Editing for Brands</title>
+<meta name="description" content="Post-production agency for brands serious about short-form video. Reels, product videos, brand content. Based in India, working globally.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #111110;
+    --white: #FAFAF8;
+    --gray: #6B6B67;
+    --light: #F0EFEA;
+    --accent: #C8A96E;
+    --border: #E2E1DA;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 5%;
+    background: rgba(250,250,248,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--black);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--gray);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--black); }
+
+  .nav-cta {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--white);
+    background: var(--black);
+    text-decoration: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 100px;
+    transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.8; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    justify-content: center;
+    padding: 8rem 5% 5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 1.75rem;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    max-width: 800px;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--gray);
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+
+  .hero-actions { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+
+  .btn-primary {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--white);
+    background: var(--black);
+    text-decoration: none;
+    padding: 0.85rem 2rem;
+    border-radius: 100px;
+    transition: opacity 0.2s;
+  }
+  .btn-primary:hover { opacity: 0.8; }
+
+  .btn-secondary {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--black);
+    text-decoration: none;
+    padding: 0.85rem 2rem;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    transition: border-color 0.2s;
+  }
+  .btn-secondary:hover { border-color: var(--black); }
+
+  .hero-clients {
+    margin-top: 5rem;
+    display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;
+  }
+
+  .hero-clients-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray);
+  }
+
+  .client-tags { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+  .client-tag {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--gray);
+    border: 1px solid var(--border);
+    padding: 0.35rem 0.9rem;
+    border-radius: 100px;
+    background: var(--white);
+  }
+
+  /* SECTION */
+  section { padding: 6rem 5%; border-bottom: 1px solid var(--border); }
+
+  .section-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+
+  .section-sub {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--gray);
+    max-width: 480px;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+  }
+
+  /* WORK */
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .work-card {
+    background: var(--light);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform 0.25s;
+  }
+  .work-card:hover { transform: translateY(-3px); }
+
+  .work-card-inner { padding: 2rem; }
+
+  .work-brand {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .work-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+  }
+
+  .work-desc {
+    font-size: 0.875rem;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .work-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 1px;
+    transition: opacity 0.2s;
+  }
+  .work-link:hover { opacity: 0.6; }
+
+  /* SERVICES */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .service-item {
+    background: var(--white);
+    padding: 2rem;
+  }
+
+  .service-icon {
+    width: 36px; height: 36px;
+    background: var(--light);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+  }
+
+  .service-name {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+  }
+
+  .service-desc {
+    font-size: 0.875rem;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* PRICING */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .price-card {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    background: var(--white);
+    position: relative;
+  }
+
+  .price-card.featured {
+    border-color: var(--black);
+    background: var(--black);
+    color: var(--white);
+  }
+
+  .price-badge {
+    position: absolute; top: 1.25rem; right: 1.25rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: var(--accent);
+    color: var(--white);
+    padding: 0.25rem 0.7rem;
+    border-radius: 100px;
+  }
+
+  .price-name {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 0.75rem;
+  }
+
+  .price-card.featured .price-name { color: #999; }
+
+  .price-amount {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+    line-height: 1;
+  }
+
+  .price-period {
+    font-size: 0.8rem;
+    color: var(--gray);
+    margin-bottom: 1.5rem;
+  }
+
+  .price-card.featured .price-period { color: #999; }
+
+  .price-features { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+
+  .price-features li {
+    font-size: 0.875rem;
+    color: var(--gray);
+    display: flex; gap: 0.5rem; align-items: flex-start;
+  }
+
+  .price-card.featured .price-features li { color: #ccc; }
+
+  .price-features li::before {
+    content: '—';
+    color: var(--accent);
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    margin-top: 2px;
+  }
+
+  /* ABOUT */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .stat-item { }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--gray);
+    line-height: 1.4;
+  }
+
+  /* CONTACT */
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+
+  .contact-link {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--black);
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .contact-link:hover { border-color: var(--black); background: var(--light); }
+
+  .contact-link-label { font-size: 0.875rem; font-weight: 500; }
+  .contact-link-val { font-size: 0.8rem; color: var(--gray); }
+
+  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--black);
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    outline: none;
+    resize: vertical;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus { border-color: var(--black); }
+
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder { color: #bbb; }
+
+  .contact-form textarea { min-height: 120px; }
+
+  .contact-form button {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--white);
+    background: var(--black);
+    border: none;
+    border-radius: 100px;
+    padding: 0.9rem 2rem;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: opacity 0.2s;
+  }
+
+  .contact-form button:hover { opacity: 0.8; }
+
+  /* FOOTER */
+  footer {
+    padding: 2rem 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 1rem;
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--black);
+    text-decoration: none;
+  }
+
+  .footer-copy {
+    font-size: 0.8rem;
+    color: var(--gray);
+  }
+
+  .footer-links { display: flex; gap: 1.5rem; }
+  .footer-links a {
+    font-size: 0.8rem;
+    color: var(--gray);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--black); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-tag { animation: fadeUp 0.6s ease both; }
+  .hero h1 { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-sub { animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-actions { animation: fadeUp 0.6s 0.3s ease both; }
+  .hero-clients { animation: fadeUp 0.6s 0.4s ease both; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero h1 { font-size: 2.4rem; }
+  }
+
+  /* SHOWREEL */
+  .showreel {
+    background: var(--light);
+    padding: 4rem 5%;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .showreel-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray);
+    margin-bottom: 1rem;
+  }
+
+  .showreel-link {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 2px;
+    transition: opacity 0.2s;
+  }
+  .showreel-link:hover { opacity: 0.6; }
+
+  .play-icon {
+    width: 44px; height: 44px;
+    background: var(--black);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .play-icon svg { margin-left: 3px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Megg Media</a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get in touch</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-tag">Post-Production Agency · India</span>
+  <h1>Your footage deserves<br>a <em>better edit.</em></h1>
+  <p class="hero-sub">We take your raw footage and turn it into short-form content that actually performs. Reels, product videos, brand content — everything after the camera stops rolling.</p>
+  <div class="hero-actions">
+    <a href="#work" class="btn-primary">See our work</a>
+    <a href="#pricing" class="btn-secondary">View pricing</a>
+  </div>
+  <div class="hero-clients">
+    <span class="hero-clients-label">Worked with</span>
+    <div class="client-tags">
+      <span class="client-tag">Swiggy</span>
+      <span class="client-tag">JLR India</span>
+      <span class="client-tag">Dr. Water</span>
+      <span class="client-tag">Asian Footwear</span>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWREEL -->
+<div class="showreel">
+  <p class="showreel-label">Showreel 2026</p>
+  <a href="https://vimeo.com/1168919520" target="_blank" class="showreel-link">
+    <div class="play-icon">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M3 2L11 7L3 12V2Z" fill="white"/>
+      </svg>
+    </div>
+    Watch the full showreel →
+  </a>
+</div>
+
+<!-- WORK -->
+<section id="work">
+  <p class="section-label">Selected work</p>
+  <h2 class="section-title">Projects we're proud of</h2>
+  <p class="section-sub">Every brand is different. Every edit is built for that specific audience and platform.</p>
+
+  <div class="work-grid">
+    <div class="work-card">
+      <div class="work-card-inner">
+        <p class="work-brand">Swiggy</p>
+        <h3 class="work-title">Delivery Partners Campaign</h3>
+        <p class="work-desc">Post-production for one of India's largest food delivery platforms. High-energy reels built for maximum retention.</p>
+        <a href="https://vimeo.com/1154160686" target="_blank" class="work-link">Watch on Vimeo →</a>
+      </div>
+    </div>
+
+    <div class="work-card">
+      <div class="work-card-inner">
+        <p class="work-brand">JLR India</p>
+        <h3 class="work-title">Brand Content</h3>
+        <p class="work-desc">Premium automotive post-production for Jaguar Land Rover India. Precision editing for a precision brand.</p>
+        <a href="https://vimeo.com/1154160707" target="_blank" class="work-link">Watch on Vimeo →</a>
+      </div>
+    </div>
+
+    <div class="work-card">
+      <div class="work-card-inner">
+        <p class="work-brand">Dr. Water</p>
+        <h3 class="work-title">Product Campaign</h3>
+        <p class="work-desc">Short-form product video editing for a health and wellness brand. Clean, clear, conversion-focused.</p>
+        <a href="https://vimeo.com/1154160242" target="_blank" class="work-link">Watch on Vimeo →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <p class="section-label">What we do</p>
+  <h2 class="section-title">Post-production,<br>start to finish</h2>
+  <p class="section-sub">You shoot. We handle everything after — editing, colour, captions, sound, delivery.</p>
+
+  <div class="services-grid">
+    <div class="service-item">
+      <div class="service-icon">▶</div>
+      <p class="service-name">Reels & Short-Form</p>
+      <p class="service-desc">Platform-optimised edits for Instagram, YouTube Shorts, and beyond. Built to hold attention from the first frame.</p>
+    </div>
+    <div class="service-item">
+      <div class="service-icon">◈</div>
+      <p class="service-name">Product Videos</p>
+      <p class="service-desc">Clean, polished product content for D2C brands. Showcases what matters, removes what doesn't.</p>
+    </div>
+    <div class="service-item">
+      <div class="service-icon">◉</div>
+      <p class="service-name">Brand Content</p>
+      <p class="service-desc">Campaign films, brand stories, launch videos. Everything a brand needs to look serious on social.</p>
+    </div>
+    <div class="service-item">
+      <div class="service-icon">⊞</div>
+      <p class="service-name">UGC Editing</p>
+      <p class="service-desc">Talking head and UGC content polished with captions, colour grade, and sound design that converts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <p class="section-label">Pricing</p>
+  <h2 class="section-title">Simple, honest packages</h2>
+  <p class="section-sub">No hidden costs. No surprise revisions. Just clean pricing for consistent work.</p>
+
+  <div class="pricing-grid">
+    <div class="price-card">
+      <p class="price-name">Starter</p>
+      <p class="price-amount">₹15,000</p>
+      <p class="price-period">per month</p>
+      <ul class="price-features">
+        <li>8 Reels per month</li>
+        <li>Captions & subtitles</li>
+        <li>Colour grading</li>
+        <li>Sound design</li>
+        <li>2 revision rounds</li>
+      </ul>
+    </div>
+
+    <div class="price-card featured">
+      <span class="price-badge">Most popular</span>
+      <p class="price-name">Growth</p>
+      <p class="price-amount">₹25,000</p>
+      <p class="price-period">per month</p>
+      <ul class="price-features">
+        <li>12 Reels per month</li>
+        <li>2 Product videos</li>
+        <li>Captions & subtitles</li>
+        <li>Colour grading</li>
+        <li>Sound design</li>
+        <li>Basic content strategy</li>
+        <li>3 revision rounds</li>
+      </ul>
+    </div>
+
+    <div class="price-card">
+      <p class="price-name">Per video</p>
+      <p class="price-amount">₹6,000</p>
+      <p class="price-period">per reel · no commitment</p>
+      <ul class="price-features">
+        <li>Single reel edit</li>
+        <li>Captions & subtitles</li>
+        <li>Colour grading</li>
+        <li>Sound design</li>
+        <li>2 revision rounds</li>
+        <li>48hr turnaround</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div>
+      <p class="section-label">About</p>
+      <h2 class="section-title">Built on one idea</h2>
+      <p class="section-sub">Most small businesses sit on great footage that never performs — not because the content idea was bad, but because the edit wasn't built to hold attention.</p>
+      <p class="section-sub">At Megg Media, we specialise in post-production for short-form video. 6+ years of editing experience, a deep understanding of what makes people watch till the end, and a straightforward process that respects your time.</p>
+      <p class="section-sub">Based in India. Working with brands globally.</p>
+    </div>
+    <div class="about-stats">
+      <div class="stat-item">
+        <p class="stat-num">6+</p>
+        <p class="stat-label">Years of post-production experience</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-num">48h</p>
+        <p class="stat-label">Average turnaround per reel</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-num">100%</p>
+        <p class="stat-label">Remote — no studio visit needed</p>
+      </div>
+      <div class="stat-item">
+        <p class="stat-num">∞</p>
+        <p class="stat-label">Scalable as your content grows</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div>
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">Let's work together</h2>
+      <p class="section-sub">Have footage that needs editing? Tell us what you're working on and we'll get back within 24 hours.</p>
+      <div class="contact-links">
+        <a href="mailto:contact@meggmedia.com" class="contact-link">
+          <span class="contact-link-label">Email</span>
+          <span class="contact-link-val">contact@meggmedia.com</span>
+        </a>
+        <a href="https://www.linkedin.com/in/editor-arya/" target="_blank" class="contact-link">
+          <span class="contact-link-label">LinkedIn</span>
+          <span class="contact-link-val">linkedin.com/in/editor-arya</span>
+        </a>
+        <a href="https://www.instagram.com/meggmedia/" target="_blank" class="contact-link">
+          <span class="contact-link-label">Instagram</span>
+          <span class="contact-link-val">@meggmedia</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <input type="text" placeholder="Your name">
+      <input type="email" placeholder="Email address">
+      <input type="text" placeholder="Brand / company name">
+      <textarea placeholder="Tell us about your project — what do you shoot, how often do you post, what are you looking for?"></textarea>
+      <button type="button" onclick="window.location.href='mailto:contact@meggmedia.com?subject=Project Inquiry'">Send message →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="#" class="footer-logo">Megg Media</a>
+  <p class="footer-copy">© 2026 Megg Media · Post-Production for Brands That Mean Business</p>
+  <div class="footer-links">
+    <a href="mailto:contact@meggmedia.com">Email</a>
+    <a href="https://www.linkedin.com/in/editor-arya/" target="_blank">LinkedIn</a>
+    <a href="https://www.instagram.com/meggmedia/" target="_blank">Instagram</a>
+  </div>
+</footer>
+
+</body>
+</html>
