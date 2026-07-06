@@ -458,7 +458,7 @@ async function detectCurrency() {
         if (usd) el.textContent = '$' + parseInt(usd).toLocaleString();
       });
       const note = document.getElementById('currency-note');
-      if (note) note.textContent = 'Prices shown in USD. Indian clients are billed in INR.';
+      if (note) note.textContent = '.';
     }
   } catch(e) {}
 }
