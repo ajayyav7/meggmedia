@@ -22,20 +22,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-cta:hover{opacity:.8;}
 
 /* HERO */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;padding:8rem 5% 5rem;border-bottom:1px solid var(--border);}
+.hero{position:relative;min-height:100vh;display:grid;grid-template-columns:1fr;justify-items:center;align-items:center;padding:8rem 5% 5rem;border-bottom:1px solid var(--border);}
+.hero-left{width:100%;max-width:920px;text-align:center;}
 .hero-tag{display:inline-block;font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-bottom:1.75rem;animation:fadeUp .6s ease both;}
 .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:400;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-.01em;animation:fadeUp .6s .1s ease both;}
 .hero h1 em{font-style:italic;color:var(--accent);}
-.hero-sub{font-size:1rem;font-weight:300;color:var(--gray);max-width:420px;margin-bottom:2.5rem;line-height:1.75;animation:fadeUp .6s .2s ease both;}
-.hero-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;animation:fadeUp .6s .3s ease both;}
+.hero-sub{font-size:1rem;font-weight:300;color:var(--gray);max-width:520px;margin:0 auto 2.5rem;line-height:1.75;animation:fadeUp .6s .2s ease both;}
+.hero-actions{display:flex;gap:1rem;align-items:center;justify-content:center;flex-wrap:wrap;animation:fadeUp .6s .3s ease both;}
 .btn-primary{font-size:.9rem;font-weight:500;color:var(--white);background:var(--black);text-decoration:none;padding:.85rem 2rem;border-radius:100px;transition:opacity .2s;}
 .btn-primary:hover{opacity:.8;}
 .btn-secondary{font-size:.9rem;font-weight:400;color:var(--black);text-decoration:none;padding:.85rem 2rem;border-radius:100px;border:1px solid var(--border);transition:border-color .2s;}
 .btn-secondary:hover{border-color:var(--black);}
-.hero-right{animation:fadeUp .6s .2s ease both;}
-.hero-video-wrap{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--border);background:var(--black);aspect-ratio:16/9;box-shadow:0 20px 60px rgba(0,0,0,.12);}
-.hero-video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:none;}
-.hero-video-label{margin-top:.75rem;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);text-align:center;}
+.hero-scroll-cue{position:absolute;left:50%;bottom:1.25rem;display:grid;place-items:center;width:2.75rem;height:2.75rem;transform:translateX(-50%);border:1px solid rgba(200,169,110,.32);border-radius:50%;background:linear-gradient(135deg,rgba(200,169,110,.14),rgba(200,169,110,.04));color:rgba(200,169,110,.72);text-decoration:none;opacity:.82;transition:transform .2s ease,opacity .2s ease,border-color .2s ease;}
+.hero-scroll-cue span{font-size:1.5rem;line-height:1;}
+.hero-scroll-cue:hover,.hero-scroll-cue:focus-visible{transform:translate(-50%,-3px);opacity:1;border-color:rgba(200,169,110,.62);outline:none;}
 
 /* SECTIONS */
 section{padding:6rem 5%;border-bottom:1px solid var(--border);}
@@ -89,8 +89,7 @@ footer{padding:2rem 5%;display:flex;align-items:center;justify-content:space-bet
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
 
 @media(max-width:900px){
-.hero{grid-template-columns:1fr;gap:2.5rem;padding-top:7rem;}
-.hero-right{order:-1;}
+.hero{padding-top:7rem;}
 .about-grid{grid-template-columns:minmax(0,1fr) minmax(220px,320px);gap:2rem;}
 .contact-grid{grid-template-columns:1fr;gap:2.5rem;}
 .nav-links{display:none;}
@@ -147,22 +146,16 @@ footer{flex-direction:column;align-items:flex-start;}
     </p>
     <div class="hero-actions">
      <a class="btn-primary" href="#work">
-      See my work
+      View selected work
      </a>
      <a class="btn-secondary" href="https://calendly.com/contact-meggmedia/30min" target="_blank">
-      Book a call
+      Discuss a project
      </a>
     </div>
    </div>
-   <div class="hero-right">
-    <div class="hero-video-wrap">
-     <iframe allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" class="hero-highlight-static" src="https://player.vimeo.com/video/1168919520?autoplay=0&amp;muted=1&amp;loop=1&amp;controls=0&amp;autopause=0&amp;playsinline=1&amp;title=0&amp;byline=0&amp;portrait=0">
-     </iframe>
-    </div>
-    <p class="hero-video-label">
-     Showreel 2026
-    </p>
-   </div>
+   <a class="hero-scroll-cue" href="#work" aria-label="Scroll to selected work">
+    <span aria-hidden="true">↓</span>
+   </a>
   </section>
   <!-- WORK -->
   <section id="work">
