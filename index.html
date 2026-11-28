@@ -6,7 +6,7 @@
   <title>
    Ajay | Megg Media - Short Form Video Editing for Brands
   </title>
-  <meta content="Post-production agency for brands serious about short-form video. Reels, product videos, brand content." name="description"/>
+  <meta content="Founder-led post-production for brands and creators. Work directly with Ajay on Reels, brand videos, product campaigns, and thoughtful edits." name="description"/>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
@@ -33,9 +33,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .btn-primary:hover{opacity:.8;}
 .btn-secondary{font-size:.9rem;font-weight:400;color:var(--black);text-decoration:none;padding:.85rem 2rem;border-radius:100px;border:1px solid var(--border);transition:border-color .2s;}
 .btn-secondary:hover{border-color:var(--black);}
-.hero-scroll-cue{position:absolute;left:50%;bottom:1.25rem;display:grid;place-items:center;width:2.75rem;height:2.75rem;transform:translateX(-50%);border:1px solid rgba(200,169,110,.32);border-radius:50%;background:linear-gradient(135deg,rgba(200,169,110,.14),rgba(200,169,110,.04));color:rgba(200,169,110,.72);text-decoration:none;opacity:.82;transition:transform .2s ease,opacity .2s ease,border-color .2s ease;}
-.hero-scroll-cue span{font-size:1.5rem;line-height:1;}
-.hero-scroll-cue:hover,.hero-scroll-cue:focus-visible{transform:translate(-50%,-3px);opacity:1;border-color:rgba(200,169,110,.62);outline:none;}
+.hero-scroll-cue{position:absolute;left:50%;bottom:1.25rem;display:grid;place-items:center;width:3rem;height:3rem;transform:translateX(-50%);translate:0 0;border:1px solid rgba(200,169,110,.72);border-radius:50%;background:linear-gradient(135deg,rgba(200,169,110,.34),rgba(200,169,110,.16));box-shadow:0 0 0 5px rgba(200,169,110,.1),0 8px 22px rgba(17,17,16,.1);color:rgba(17,17,16,.9);text-decoration:none;opacity:1;transition:transform .2s ease,background .2s ease,box-shadow .2s ease,border-color .2s ease;animation:scrollCueFloat 2.2s ease-in-out infinite;}
+.hero-scroll-cue span{font-size:1.6rem;line-height:1;}
+.hero-scroll-cue:hover,.hero-scroll-cue:focus-visible{transform:translate(-50%,-3px);border-color:rgba(200,169,110,.95);background:linear-gradient(135deg,rgba(200,169,110,.46),rgba(200,169,110,.24));box-shadow:0 0 0 6px rgba(200,169,110,.15),0 10px 24px rgba(17,17,16,.14);outline:none;animation-play-state:paused;}
+@keyframes scrollCueFloat{0%,100%{translate:0 0;}50%{translate:0 -6px;}}
+@media(prefers-reduced-motion:reduce){.hero-scroll-cue{animation:none;}}
 
 /* SECTIONS */
 section{padding:6rem 5%;border-bottom:1px solid var(--border);}
@@ -57,12 +59,17 @@ section{padding:6rem 5%;border-bottom:1px solid var(--border);}
 .service-name{font-size:1rem;font-weight:500;margin-bottom:.4rem;}
 .service-desc{font-size:.875rem;color:var(--gray);line-height:1.6;}
 
+/* PROCESS */
+.process-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:2rem;}
+.process-step{padding:1.5rem;border:1px solid var(--border);border-radius:14px;background:var(--white);}
+.process-number{display:block;margin-bottom:1rem;color:var(--accent);font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;}
+.process-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:400;margin-bottom:.5rem;}
+.process-copy{font-size:.9rem;color:var(--gray);line-height:1.65;}
+
 /* ABOUT */
-.about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,420px);gap:5rem;align-items:center;}
-.about-illustration{display:flex;align-items:center;justify-content:center;}
-.about-illustration img{max-width:420px;width:100%;height:auto;}
-.stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:400;line-height:1;margin-bottom:.3rem;}
-.stat-label{font-size:.82rem;color:var(--gray);line-height:1.4;}
+.about-grid{max-width:760px;margin:0 auto;}
+.about-grid .section-sub{max-width:none;margin-bottom:1.25rem;}
+.about-grid .section-sub:last-child{margin-bottom:0;}
 
 /* WORK GRID - PORTRAIT */
 .work-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,260px));gap:1.5rem;justify-content:center;}
@@ -98,6 +105,7 @@ footer{padding:2rem 5%;display:flex;align-items:center;justify-content:space-bet
 @media(max-width:600px){
 .hero h1{font-size:2.2rem;}
 .about-grid{grid-template-columns:1fr;}
+.process-grid{grid-template-columns:1fr;}
 footer{flex-direction:column;align-items:flex-start;}
 }
   </style>
@@ -132,7 +140,7 @@ footer{flex-direction:column;align-items:flex-start;}
   <section class="hero">
    <div class="hero-left">
     <span class="hero-tag">
-     Freelance Video Editor
+     Founder-Led Editing Studio
     </span>
     <h1>
      Content that makes people
@@ -284,10 +292,6 @@ footer{flex-direction:column;align-items:flex-start;}
      <div class="work-video">
      </div>
     </div>
-    <div class="work-card">
-     <div class="work-video">
-     </div>
-    </div>
    </div>
   </section>
   <!-- SERVICES -->
@@ -350,6 +354,35 @@ footer{flex-direction:column;align-items:flex-start;}
     </div>
    </div>
   </section>
+  <!-- PROCESS -->
+  <section id="process">
+   <p class="section-label">
+    How I work
+   </p>
+   <h2 class="section-title">
+    A clear process from brief to delivery
+   </h2>
+   <p class="section-sub">
+    You bring the footage and the brief. I stay hands-on through the edit and final delivery.
+   </p>
+   <div class="process-grid">
+    <article class="process-step">
+     <span class="process-number">01 / Brief</span>
+     <h3 class="process-title">Share the brief</h3>
+     <p class="process-copy">Tell me about the project, its audience, platform, and delivery needs.</p>
+    </article>
+    <article class="process-step">
+     <span class="process-number">02 / First cut</span>
+     <h3 class="process-title">I shape the edit</h3>
+     <p class="process-copy">I put together a first cut with pacing, colour, captions, and sound suited to the brief.</p>
+    </article>
+    <article class="process-step">
+     <span class="process-number">03 / Feedback</span>
+     <h3 class="process-title">Refine and deliver</h3>
+     <p class="process-copy">I refine the edit from your feedback, then deliver the final files ready for your platform.</p>
+    </article>
+   </div>
+  </section>
   <!-- ABOUT -->
   <section id="about">
    <div class="about-grid">
@@ -358,20 +391,14 @@ footer{flex-direction:column;align-items:flex-start;}
       About
      </p>
      <h2 class="section-title">
-      Built on one belief
+      Meet Ajay
      </h2>
      <p class="section-sub">
-      Great footage deserves a great edit. Not a template. Not a formula. An edit that was built specifically for that brand, that audience, and that platform.
+      I'm Ajay, the editor behind Megg Media. I work directly with brands and creators, shaping short- and long-form video for the audience and platform it's made for.
      </p>
      <p class="section-sub">
-      I specialise in post-production for short-form and long-form video - with a deep understanding of what makes people watch till the end, and a process that delivers consistently, every time.
+      My work spans automotive, FMCG, travel and D2C. I stay hands-on from the first conversation through editing, feedback, and final delivery.
      </p>
-     <p class="section-sub">
-      Working with brands across industries - from automotive and FMCG to travel and D2C - I handle everything after the camera stops rolling.
-     </p>
-    </div>
-    <div class="about-illustration">
-     <img alt="Illustration of a man speaking through a microphone" src="man-speaking-through-the-microphone-vector-46985265 Background Removed.png"/>
     </div>
    </div>
   </section>
