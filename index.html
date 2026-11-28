@@ -26,7 +26,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-left{width:100%;max-width:920px;text-align:center;}
 .hero-tag{display:inline-block;font-size:.75rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-bottom:1.75rem;animation:fadeUp .6s ease both;}
 .hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:400;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-.01em;animation:fadeUp .6s .1s ease both;}
-.hero h1 em{font-style:italic;color:var(--accent);}
+.hero h1 em{font-size:1.12em;font-style:italic;color:var(--accent);}
+.hero-editing-timeline{width:180px;height:28px;margin:-.95rem auto 1.3rem;opacity:.88;}
+.hero-editing-timeline svg{display:block;width:100%;height:100%;overflow:visible;}
+.hero-timeline-track{fill:none;stroke:var(--border);stroke-width:1;}
+.hero-timeline-clip{fill:rgba(200,169,110,.1);stroke:rgba(200,169,110,.48);stroke-width:.8;}
+.hero-timeline-wave{fill:none;stroke:var(--accent);stroke-width:1;stroke-linecap:round;stroke-linejoin:round;opacity:.78;}
+.hero-timeline-playhead{stroke:var(--accent);stroke-width:1.5;stroke-linecap:round;filter:drop-shadow(0 0 2px rgba(200,169,110,.4));animation:timelineScrub 3s cubic-bezier(.45,0,.55,1) infinite alternate;}
+.hero-timeline-playhead path:last-child{fill:var(--accent);stroke:none;}
+@keyframes timelineScrub{from{transform:translateX(-72px);}to{transform:translateX(72px);}}
 .hero-sub{font-size:1rem;font-weight:300;color:var(--gray);max-width:520px;margin:0 auto 2.5rem;line-height:1.75;animation:fadeUp .6s .2s ease both;}
 .hero-actions{display:flex;gap:1rem;align-items:center;justify-content:center;flex-wrap:wrap;animation:fadeUp .6s .3s ease both;}
 .btn-primary{font-size:.9rem;font-weight:500;color:var(--white);background:var(--black);text-decoration:none;padding:.85rem 2rem;border-radius:100px;transition:opacity .2s;}
@@ -37,7 +45,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .hero-scroll-cue span{font-size:1.6rem;line-height:1;}
 .hero-scroll-cue:hover,.hero-scroll-cue:focus-visible{transform:translate(-50%,-3px);border-color:rgba(200,169,110,.95);background:linear-gradient(135deg,rgba(200,169,110,.46),rgba(200,169,110,.24));box-shadow:0 0 0 6px rgba(200,169,110,.15),0 10px 24px rgba(17,17,16,.14);outline:none;animation-play-state:paused;}
 @keyframes scrollCueFloat{0%,100%{translate:0 0;}50%{translate:0 -6px;}}
-@media(prefers-reduced-motion:reduce){.hero-scroll-cue{animation:none;}}
+@media(prefers-reduced-motion:reduce){.hero-scroll-cue,.hero-timeline-playhead{animation:none;}}
 
 /* SECTIONS */
 section{padding:6rem 5%;border-bottom:1px solid var(--border);}
@@ -149,6 +157,21 @@ footer{flex-direction:column;align-items:flex-start;}
       motion.
      </em>
     </h1>
+    <div class="hero-editing-timeline" aria-hidden="true">
+     <svg viewBox="0 0 180 28" focusable="false">
+      <path class="hero-timeline-track" d="M8 20.5H172"/>
+      <rect class="hero-timeline-clip" x="12" y="8" width="42" height="14" rx="2.5"/>
+      <path class="hero-timeline-wave" d="M18 15h4l2-3 3 7 4-5 3 2h4l3-4 3 7 3-4h2"/>
+      <rect class="hero-timeline-clip" x="60" y="8" width="55" height="14" rx="2.5"/>
+      <path class="hero-timeline-wave" d="M66 15h5l3-4 3 7 3-5 4 2h4l3-3 3 6 3-4h4l3-2 3 3h4"/>
+      <rect class="hero-timeline-clip" x="121" y="8" width="47" height="14" rx="2.5"/>
+      <path class="hero-timeline-wave" d="M127 15h4l2-3 3 6 3-4 4 2h4l3-3 3 5 3-3h3"/>
+      <g class="hero-timeline-playhead">
+       <path d="M90 4V23"/>
+       <path d="M86 4H94L90 9Z"/>
+      </g>
+     </svg>
+    </div>
     <p class="hero-sub">
      I take your raw footage and turn it into content that actually performs. Reels, brand videos, campaigns - everything after the camera stops rolling.
     </p>
